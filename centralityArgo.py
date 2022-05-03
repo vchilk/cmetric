@@ -82,6 +82,10 @@ for each_frame in sample_annotation:
 to_array = np.asarray(to_list)
 obj_IDs = np.unique(to_array[:, 1]).astype(int)
 agent_idx = list(obj_IDs).index(agent_ID[agent_num]) if (num == 2 or num == 7) else list(obj_IDs).index(agent_ID)
+
+#######################################################
+#######################################################
+#######################################################
 adj_mats = generate_adjacency(to_array, rad)
 weave_list = []
 weave_list2 = []
@@ -102,6 +106,9 @@ for fr, item in enumerate(adj_mats):
         weave_list2.append(g[agent_idx])
         # weave_list2.append(cg[7])
     # weave_list3.append(cg[8])
+#######################################################
+#######################################################
+#######################################################
 
 buffer2 = 7 if len(weave_list2) % 2 == 0 else 8
 buffer = 7 if len(weave_list) % 2 == 0 else 8
